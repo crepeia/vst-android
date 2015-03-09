@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Live Without Tobacco</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="options">
+        <item>Dashboard</item>
+        <item>My Plan</item>
+        <item>Notifications</item>
+        <item>Danger Zones</item>
+        <item>Settings</item>
+    </string-array>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+
+    <string name="myplan">My Plan</string>
+    <string name="dashboard_myplan_explanation">Connect to vivasemtabaco.com.br and check your personalized plan.</string>
+    <string name="dashboard_myplan_button">Login/View Plan</string>
+
+
+    <string name="reminders">Reminders</string>
+    <string name="dashboard_reminders_explanation">Select reminders to be displayed or create your own. Ex: motivational messages, hints, tips, etc. </string>
+    <string name="dashboard_reminders_button">Configure</string>
+
+    <string name="dangerzones">Danger Zones</string>
+    <string name="dashboard_dangerzones_explanation">Set danger places to be warned when you are near them. </string>
+    <string name="dashboard_dangerzones_button">Configure</string>
+
+
+</resources>
