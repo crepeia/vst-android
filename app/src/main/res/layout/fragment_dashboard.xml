@@ -11,33 +11,29 @@
         android:orientation="vertical"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        android:focusable="false">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/myplan"
-            android:id="@+id/titleMyPlan"
+            android:text="@string/myPlan"
+            android:id="@+id/dashboardTitle1"
             android:textColor="#ffffffff" />
 
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/dashboard_myplan_explanation"
-            android:id="@+id/explanationMyPlan" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageMyPlan" />
+            android:text="@string/myPlan_description"
+            android:id="@+id/dashboardDescription1"
+            android:textColor="#ffffff"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dashboard_myplan_button"
-            android:id="@+id/buttonMyPlan"
+            android:id="@+id/dashboardButton1"
             android:background="#ff5492ff"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
@@ -65,13 +61,13 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/reminders"
-                android:id="@+id/textReminders"
+                android:id="@+id/dashboardTitle2"
                 android:textColor="#ffffffff" />
 
             <Switch
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/switchReminders" />
+                android:id="@+id/dashboardSwitch1" />
 
         </LinearLayout>
 
@@ -79,13 +75,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/dashboard_reminders_explanation"
-            android:id="@+id/explanationReminders" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageReminders" />
+            android:text="@string/reminders_description"
+            android:id="@+id/dashboardDescription2"
+            android:textColor="#ffffff"/>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -95,8 +87,8 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/dashboard_reminders_button"
-                android:id="@+id/buttonReminders"
+                android:text="@string/configure"
+                android:id="@+id/dashboardButton2"
                 android:background="#ff19e089"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -125,14 +117,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/dangerzones"
-                android:id="@+id/textDangerzones"
+                android:text="@string/dangerZones"
+                android:id="@+id/dashboardTitle3"
                 android:textColor="#ffffffff" />
 
             <Switch
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/switch1" />
+                android:id="@+id/dashboardSwitch2" />
 
         </LinearLayout>
 
@@ -140,13 +132,10 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/dashboard_dangerzones_explanation"
-            android:id="@+id/explanatonDangerzones" />
+            android:text="@string/dangerZones_description"
+            android:id="@+id/dashboardDescription3"
+            android:textColor="#ffffff"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageDangerzones" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -156,8 +145,8 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/dashboard_dangerzones_button"
-                android:id="@+id/buttonDangerzones"
+                android:text="@string/configure"
+                android:id="@+id/dashboardButton3"
                 android:background="#ffffb028"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"

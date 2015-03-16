@@ -1,26 +1,37 @@
-package br.com.vivasemtabaco;
+package br.com.vivasemtabaco.activity;
 
-import java.util.Locale;
 
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+import br.com.vivasemtabaco.R;
+import br.com.vivasemtabaco.fragment.DangerZonesFragment;
+import br.com.vivasemtabaco.fragment.DashboardFragment;
+import br.com.vivasemtabaco.fragment.MyPlanFragment;
+import br.com.vivasemtabaco.fragment.RemindersFragment;
+import br.com.vivasemtabaco.model.Settings;
+import br.com.vivasemtabaco.model.User;
 
 public class MainActivity extends Activity {
 
@@ -29,20 +40,27 @@ public class MainActivity extends Activity {
     private ActionBarDrawerToggle drawerToggle;
     private CharSequence drawerTitle;
     private CharSequence title;
-    private String[] options;
+    private String[] menuItems;
+    private Settings settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        try {
+            loadSettings();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(settings == null)
+        settings = new Settings();
         title = drawerTitle = getTitle();
-        options = getResources().getStringArray(R.array.options);
+        menuItems = getResources().getStringArray(R.array.menuItems);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerList = (ListView) findViewById(R.id.left_drawer);
 
         drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
-        drawerList.setAdapter(new ArrayAdapter<>(this,R.layout.drawer_list_item, options));
+        drawerList.setAdapter(new ArrayAdapter<>(this,R.layout.drawer_list_item, menuItems));
         drawerList.setOnItemClickListener(new DrawerItemClickListener());
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -64,7 +82,7 @@ public class MainActivity extends Activity {
         drawerLayout.setDrawerListener(drawerToggle);
 
         if (savedInstanceState == null) {
-            selectItem(0);
+            selectMenuItem(0);
         }
     }
 
@@ -91,11 +109,11 @@ public class MainActivity extends Activity {
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            selectItem(position);
+            selectMenuItem(position);
         }
     }
 
-    private void selectItem(int position) {
+    public void selectMenuItem(int position) {
         Fragment fragment;
 
         switch(position){
@@ -107,27 +125,56 @@ public class MainActivity extends Activity {
                 break;
             case 3: fragment = new DangerZonesFragment();
                 break;
-            case 4: fragment = new SettingsFragment();
-                break;
             default: fragment = new DashboardFragment();
         }
 
-        Bundle args = new Bundle();
-        args.putInt("0", position);
-        fragment.setArguments(args);
 
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
         drawerList.setItemChecked(position, true);
-        setTitle(options[position]);
+        setTitle(menuItems[position]);
         drawerLayout.closeDrawer(drawerList);
     }
 
+    public void changeFragment (Fragment fragment){
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack(fragment.toString()).commit();
+        saveSettings();
+    }
+    {}
     @Override
     public void setTitle(CharSequence title) {
         this.title = title;
         getActionBar().setTitle(title);
+    }
+
+    public boolean isLoggedIn() {
+        return settings.isLoggedIn();
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        settings.setLoggedIn(loggedIn);
+    }
+
+    public boolean isRemindersOn() {
+        return settings.isRemindersOn();
+    }
+
+    public void setRemindersOn(boolean remindersOn) {
+        settings.setRemindersOn(remindersOn);
+    }
+
+    public boolean isDangerZonesOn() {
+        return settings.isDangerZonesOn();
+    }
+
+    public void setDangerZonesOn(boolean dangerZonesOn) {
+        settings.setDangerZonesOn(dangerZonesOn);
+    }
+
+    public User getUser() {
+        return settings.getUser();
     }
 
 
@@ -143,78 +190,32 @@ public class MainActivity extends Activity {
         drawerToggle.onConfigurationChanged(newConfig);
     }
 
-
-    public static class DashboardFragment extends Fragment {
-
-        public DashboardFragment() {
-
+    public void loadSettings() throws IOException {
+        FileInputStream fis = this.getApplicationContext().openFileInput("settings.data");
+        ObjectInputStream is = new ObjectInputStream(fis);
+        try {
+            settings = (Settings) is.readObject();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
+        is.close();
+        fis.close();
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
-            String title = getResources().getStringArray(R.array.options)[0];
-            getActivity().setTitle(title);
-            return rootView;
-        }
     }
 
-    public static class MyPlanFragment extends Fragment {
-
-        public MyPlanFragment() {
-
+    public void saveSettings(){
+        try {
+            FileOutputStream fos = this.getApplicationContext().openFileOutput("settings.data", Context.MODE_PRIVATE);
+            ObjectOutputStream os = new ObjectOutputStream(fos);
+            os.writeObject(settings);
+            os.close();
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_myplan, container, false);
-            return rootView;
-        }
     }
 
-    public static class RemindersFragment extends Fragment {
-
-        public RemindersFragment() {
-
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_reminders, container, false);
-            return rootView;
-        }
-    }
-
-    public static class DangerZonesFragment extends Fragment {
-
-        public DangerZonesFragment() {
-
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_dangerzones, container, false);
-            return rootView;
-        }
-    }
-
-    public static class SettingsFragment extends Fragment {
-
-        public SettingsFragment() {
-
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
-            return rootView;
-        }
-    }
 
 
 }

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/addDangerZoneTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffb028"
+                android:text="@string/addDangerZone"
+                android:textColor="#ffffffff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title"
+                android:id="@+id/addDangerZoneText1"
+                android:textColor="#ffffb028"
+                android:textSize="20sp"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="15"
+                android:inputType="textAutoCorrect|text"
+                android:id="@+id/addDangerZoneField"
+                android:imeOptions="actionDone"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location"
+                android:id="@+id/addDangerZoneText2"
+                android:textColor="#ffffb028"
+                android:textSize="20sp"/>
+
+
+
+           <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                android:name="com.google.android.gms.maps.MapFragment"
+                android:id="@+id/addDangerZoneMap"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="10dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/addDangerZone"
+                android:id="@+id/addDangerZoneButton"
+                android:background="#ffffb028"
+                android:textColor="#ffffff"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

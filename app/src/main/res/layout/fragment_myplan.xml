@@ -1,7 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="1">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/myPlanTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ff5492ff"
+                android:text="@string/myPlan"
+                android:textColor="#ffffffff"
+                android:textSize="20sp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/myPlanTitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tips"
+                android:textColor="#ff6089ff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/myPlanText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="@string/tipsList" />
+
+            <TextView
+                android:id="@+id/myPlanTitle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quitDate"
+                android:textColor="#ff6089ff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/myPlanText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/myPlanTitle3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techniques"
+                android:textColor="#ff6089ff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/myPlanText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/myPlanTitle4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/previousAttempts"
+                android:textColor="#ff6089ff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/myPlanText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="bottom|right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/myPlanText6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loggedInAs"
+                    android:textColor="#ff6089ff" />
+
+                <TextView
+                    android:id="@+id/myPlanText7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:id="@+id/myPlanLogOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/logout"
+                    android:textColor="#ff6089ff" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 </LinearLayout>

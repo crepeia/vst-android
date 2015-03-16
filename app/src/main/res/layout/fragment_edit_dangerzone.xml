@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/editDangerZoneTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffb028"
+                android:text="@string/editDangerZone"
+                android:textColor="#ffffffff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title"
+                android:id="@+id/editDangerZoneText1"
+                android:textColor="#ffffb028"
+                android:textSize="20sp"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="15"
+                android:inputType="textAutoCorrect|text"
+                android:id="@+id/editDangerZoneField"
+                android:imeOptions="actionDone"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location"
+                android:id="@+id/editDangerZoneText2"
+                android:textColor="#ffffb028"
+                android:textSize="20sp"/>
+
+
+
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                android:name="com.google.android.gms.maps.MapFragment"
+                android:id="@+id/editDangerZoneMap"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="10dp"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save"
+                    android:id="@+id/editDangerZoneButton1"
+                    android:background="#ffffb028"
+                    android:textColor="#ffffff"/>
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/delete"
+                    android:id="@+id/editDangerZoneButton2"
+                    android:background="#ffffb028"
+                    android:textColor="#ffffff"/>
+            </LinearLayout>
+
+
+</LinearLayout>

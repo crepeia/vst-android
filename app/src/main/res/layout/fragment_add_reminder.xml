@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/addReminderTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff19e089"
+        android:text="@string/addReminder"
+        android:textColor="#ffffffff"
+        android:textSize="20sp" />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/message"
+        android:id="@+id/addReminderText1"
+        android:textColor="#ff19e089"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="15"
+        android:inputType="textAutoCorrect|text"
+        android:id="@+id/addReminderField"
+        android:imeOptions="actionDone"/>
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time"
+        android:id="@+id/addReminderText2"
+        android:textColor="#ff19e089"
+        android:textSize="20sp"/>
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addReminderPicker"
+     />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/frequency"
+        android:id="@+id/addReminderText3"
+        android:textColor="#ff19e089"
+        android:textSize="20sp"/>
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/addReminderRadioGroup">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/once"
+            android:id="@+id/addReminderRadio1" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/daily"
+            android:id="@+id/addReminderRadio2" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weekly"
+            android:id="@+id/addReminderRadio3" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/monthly"
+            android:id="@+id/addReminderRadio4" />
+    </RadioGroup>
+
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px" />
+
+        <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addReminder"
+        android:id="@+id/addReminderButton"
+        android:background="#ff19e089"
+        android:textColor="#ffffff"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
+        </ScrollView>
+
+  </LinearLayout>

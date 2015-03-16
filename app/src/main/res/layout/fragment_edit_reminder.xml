@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/editReminderTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ff19e089"
+                android:text="@string/editReminder"
+                android:textColor="#ffffffff"
+                android:textSize="20sp" />
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="20px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/message"
+                android:id="@+id/editReminderText1"
+                android:textColor="#ff19e089"
+                android:textSize="20sp"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="15"
+                android:inputType="textAutoCorrect|text"
+                android:id="@+id/editReminderField"
+                android:imeOptions="actionDone"/>
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="20px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time"
+                android:id="@+id/editReminderText2"
+                android:textColor="#ff19e089"
+                android:textSize="20sp"/>
+
+            <TimePicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editReminderPicker"
+                />
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="20px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/frequency"
+                android:id="@+id/editReminderText3"
+                android:textColor="#ff19e089"
+                android:textSize="20sp"/>
+
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/editReminderRadioGroup">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/once"
+                    android:id="@+id/editReminderRadio1" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/daily"
+                    android:id="@+id/editReminderRadio2" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/weekly"
+                    android:id="@+id/editReminderRadio3" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/monthly"
+                    android:id="@+id/editReminderRadio4" />
+            </RadioGroup>
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="20px" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save"
+                    android:id="@+id/editReminderButton1"
+                    android:background="#ff19e089"
+                    android:textColor="#ffffff"/>
+
+                <Space
+                    android:layout_width="20px"
+                    android:layout_height="20px" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/delete"
+                    android:id="@+id/editReminderButton2"
+                    android:background="#ff19e089"
+                    android:textColor="#ffffff"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

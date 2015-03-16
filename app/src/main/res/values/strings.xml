@@ -2,33 +2,63 @@
 <resources>
 
     <string name="app_name">Live Without Tobacco</string>
-    <string name="title_activity_dashboard">Dashboard</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string-array name="options">
+    <string-array name="menuItems">
         <item>Dashboard</item>
         <item>My Plan</item>
-        <item>Notifications</item>
+        <item>Reminders</item>
         <item>Danger Zones</item>
-        <item>Settings</item>
     </string-array>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
-    <string name="action_websearch">Web search</string>
-    <string name="app_not_available">Sorry, there\'s no web browser available</string>
 
-    <string name="myplan">My Plan</string>
-    <string name="dashboard_myplan_explanation">Connect to vivasemtabaco.com.br and check your personalized plan.</string>
-    <string name="dashboard_myplan_button">Login/View Plan</string>
+    <string name="myPlan">My Plan</string>
+    <string name="myPlan_description">Connect to vivasemtabaco.com.br and check your personalized plan.</string>
+    <string name="login">Login</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="openMyPlan">Open My Plan</string>
+    <string name="tips">Tips</string>
+    <string name="tipsList">
+        1. When you stop smoking you improve your quality of life and live longer.\n\n
+        2. The urge to smoke is common when people are trying to quit. For most smokers, urges decrease within the first weeks after quitting.\n\n
+        3. Maintaining abstinence is crucial. Avoid smoking after the quit date.\n\n
+        4. Medication doubles your chances of quitting. See a health professional.\n\n
+        5. Avoid risky situations in the first weeks, such as\n
+        \t\tDrinking alcohol.\n
+        \t\tTell your friends and family members who smoke that you are trying to stop smoking.\n\n
+        6. Gaining weight is normal for smokers. It may be a good moment to start exercising and eat more fruits and vegetables.\n
+    </string>
+    <string name="quitDate">Quit date</string>
+    <string name="techniques">Techniques to overcome craving</string>
+    <string name="previousAttempts">What have worked on previous quit attempts</string>
+    <string name="loggedInAs">Logged in as:</string>
+    <string name="logout"><u>Log out</u></string>
+
 
 
     <string name="reminders">Reminders</string>
-    <string name="dashboard_reminders_explanation">Select reminders to be displayed or create your own. Ex: motivational messages, hints, tips, etc. </string>
-    <string name="dashboard_reminders_button">Configure</string>
+    <string name="reminders_description">Select reminders to be displayed or create your own. Ex: motivational messages, hints, tips, etc. </string>
+    <string name="configure">Configure</string>
+    <string name="addReminder">Add Reminder</string>
+    <string name="message">Message</string>
+    <string name="time">Time</string>
+    <string name="frequency">Frequency</string>
+    <string name="once">Once</string>
+    <string name="daily">Daily</string>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
+    <string name="editReminder">Edit Reminder</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
 
-    <string name="dangerzones">Danger Zones</string>
-    <string name="dashboard_dangerzones_explanation">Set danger places to be warned when you are near them. </string>
-    <string name="dashboard_dangerzones_button">Configure</string>
+    <string name="dangerZones">Danger Zones</string>
+    <string name="dangerZones_description">Set danger places to be warned when you are near them. </string>
+    <string name="addDangerZone">Add Danger Zone</string>
+    <string name="location">Location</string>
+    <string name="title">Title</string>
+    <string name="editDangerZone">Edit Danger Zone</string>
 
 
 </resources>
