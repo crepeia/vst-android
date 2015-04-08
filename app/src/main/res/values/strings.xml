@@ -59,6 +59,8 @@
     <string name="location">Location</string>
     <string name="title">Title</string>
     <string name="editDangerZone">Edit Danger Zone</string>
+    <string name="retrieve">Retrieve</string>
+    <string name="configureButton">Configure</string>
 
 
 </resources>

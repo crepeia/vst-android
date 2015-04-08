@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<color name="blue">#0099CC</color>
+<color name="orange">#FF8800</color>
+<color name="gradient_light_start">#30000000</color>
+<color name="blueToolbar">#0099CC</color>
+
+<integer-array name="androidcolors">
+    <item>@color/blue</item>
+    <item>@color/blueToolbar</item>
+    <item>@color/orange</item>
+    <item>@color/gradient_light_start</item>
+</integer-array>
+
+</resources>
