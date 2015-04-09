@@ -26,18 +26,18 @@ public class DangerZonesFragment extends Fragment implements View.OnClickListene
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_edit_dangerzone, container, false);
-        // View rootView = inflater.inflate(R.layout.fragment_dangerzones, container, false);
-        //listView = (ListView) rootView.findViewById(R.id.);
-        //listView = (ListView) rootView.findViewById(R.id.dangerZonesListView);
-
-        listView.setAdapter(new ArrayAdapter<>(getActivity(),R.layout.dangerzones_list_item,
+        View rootView = inflater.inflate(R.layout.fragment_dangerzones, container, false);
+        ListView listView = (ListView) rootView.findViewById(R.id.dangerZonesListView);
+        listView.setAdapter(new ArrayAdapter<>(getActivity(), R.layout.dangerzones_list_item,
                 ((MainActivity) getActivity()).getUser().getDangerZones()));
         listView.setOnItemClickListener(this);
-        button = (Button) rootView.findViewById(R.id.editDangerZoneButton2);
+        Button button = (Button) rootView.findViewById(R.id.dangerZonesButton);
         button.setOnClickListener(this);
         return rootView;
     }
+
+
+
 
     @Override
     public void onClick(View v) {

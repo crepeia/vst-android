@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/remindersTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffb028"
+        android:text="@string/dangerZones"
+        android:textColor="#ffffffff"
+        android:textSize="20sp" />
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dangerZonesListView"
+        android:clickable="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addDangerZone"
+        android:id="@+id/dangerZonesButton"
+        android:background="#ffffb028"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
